@@ -22,8 +22,11 @@ def create_argument_parser():
 
 def tar_to_csv(input_file, output_file):
     """Convert TSV file to CSV using pandas"""
+    print("reading file", input_file)
     csv_table = pd.read_table(input_file, sep='\t')
-    csv_table.to_csv(output_file, idex=False)
+    print("saving file", output_file)
+    csv_table.to_csv(output_file, index=False)
+    print("conversion finished")
 
 
 # Press the green button in the gutter to run the script.
