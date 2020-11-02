@@ -19,10 +19,9 @@ def create_argument_parser():
 
 
 def create_dict(file_path):
-    directory = path.dirname(file_path)
-    if not path.exists(directory):
-        print("creating directory ", directory)
-        makedirs(directory)
+    if not path.exists(file_path):
+        print("creating directory ", file_path)
+        makedirs(file_path)
 
 
 if __name__ == '__main__':
