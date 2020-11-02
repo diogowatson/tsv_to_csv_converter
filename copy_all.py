@@ -11,7 +11,7 @@ def create_argument_parser():
         args = parser.parse.parse_args()
     '''
     arg_parser = argparse.ArgumentParser(description='Script to parser arguments')
-    arg_parser.add_argument('output gcp storage bucket',
+    arg_parser.add_argument('output_path',
                             type=str,
                             help='path and name of output bucket')
 
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         create_dict("temp")
         output_file = file.replace(".tsv",".csv")
         tar_to_csv(file, "temp/" + output_file)
-    system("gsutil temp/*.csv gs://movies-ingestion")
+    system("gsutil cp temp/*.csv " + args.output_path)
 
 
 
