@@ -21,6 +21,7 @@ def create_argument_parser():
 def create_dict(file_path):
     directory = path.dirname(file_path)
     if not path.exists(directory):
+        print("creating directory ", directory)
         makedirs(directory)
 
 
@@ -30,6 +31,7 @@ if __name__ == '__main__':
 
     dir_path = path.dirname(path.realpath(__file__))
     files = [x for x in listdir(dir_path) if ".tsv" in x]
+    print(files)
     for file in files:
         create_dict("temp")
         output_file = file.replace(".tsv",".csv")
