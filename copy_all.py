@@ -29,8 +29,7 @@ if __name__ == '__main__':
     parser = create_argument_parser()
     args = parser.parse_args()
 
-    dir_path = path.dirname(path.realpath(__file__))
-    files = [x for x in listdir(dir_path) if ".tsv" in x]
+    files = [x for x in listdir() if ".tsv" in x]
     print(files)
     for file in files:
         create_dict("temp")
